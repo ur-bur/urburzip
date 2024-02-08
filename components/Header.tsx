@@ -7,7 +7,7 @@ export default async function Header() {
   const supabase = supabaseServer();
   const { data } = await supabase.auth.getSession();
   return (
-    <div className="w-full flex justify-between">
+    <div className="w-full flex justify-between mb-8">
       <div>
         <h1 className="text-3xl font-bold">URBURZIP</h1>
       </div>
