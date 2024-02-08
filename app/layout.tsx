@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
 import { Toaster } from "sonner";
+import { Suspense } from "react";
 
 const notoSansKr = Noto_Sans_KR({
   weight: ["500"],
@@ -56,19 +57,19 @@ export default function RootLayout({
       <body
         className={[
           notoSansKr.className,
-          "flex min-h-screen flex-col items-center justify-center p-1 md:px-24 md:py-10",
-        ].join()}
+          "flex flex-col min-h-screen p-1 md:px-24 md:py-10",
+        ].join(" ")}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Header />
-          {children}
-          <Toaster position="top-center" />
-        </ThemeProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Header />
+            {children}
+            <Toaster position="top-center" />
+          </ThemeProvider>
       </body>
     </html>
   );
