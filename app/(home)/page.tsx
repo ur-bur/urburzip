@@ -1,5 +1,6 @@
 import InitUser from "@/lib/store/InitUser";
 import { supabaseServer } from "@/lib/supabase/server";
+import AboutPage from "../about/page";
 
 export default async function Home() {
   const supabase = supabaseServer();
@@ -8,7 +9,7 @@ export default async function Home() {
     <>
       <main>
         <div className="flex-1 h-full">
-          Main
+          <AboutPage />
         </div>
       </main>
       <InitUser user={data.session?.user} />
