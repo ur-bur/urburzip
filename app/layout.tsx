@@ -4,8 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
 import { Toaster } from "sonner";
-import { Suspense } from "react";
 import { ModeToggle } from "@/components/toggleThemeButton";
+import { Analytics } from "@vercel/analytics/react";
 
 const notoSansKr = Noto_Sans_KR({
   weight: ["500"],
@@ -61,17 +61,18 @@ export default function RootLayout({
           "flex flex-col min-h-screen p-4 md:px-24 md:py-10",
         ].join(" ")}
       >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Header />
-            {children}
-            <ModeToggle />
-            <Toaster position="top-center" />
-          </ThemeProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          {children}
+          <ModeToggle />
+          <Toaster position="top-center" />
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   );
