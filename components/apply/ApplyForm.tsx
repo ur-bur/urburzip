@@ -34,7 +34,7 @@ const formSchema = z.object({
   introduce: z.string(),
 });
 
-type applyData = {
+export type ApplyData = {
   allow: boolean;
   created_at: string;
   email: string;
