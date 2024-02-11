@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
 import { Toaster } from "sonner";
 import { Suspense } from "react";
+import { ModeToggle } from "@/components/toggleThemeButton";
 
 const notoSansKr = Noto_Sans_KR({
   weight: ["500"],
@@ -62,12 +63,13 @@ export default function RootLayout({
       >
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >
             <Header />
             {children}
+            <ModeToggle />
             <Toaster position="top-center" />
           </ThemeProvider>
       </body>
