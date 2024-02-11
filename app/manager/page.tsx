@@ -7,6 +7,10 @@ import {
 import { Instagram, Phone } from "lucide-react";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Manager",
+};
+
 export default function ManagerPage() {
   const data = [
     {

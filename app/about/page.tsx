@@ -1,5 +1,9 @@
 import About from "@/components/about/About";
 
-export default function AboutPage() {
-  return <About />
+export const metadata = {
+  title: "About",
 };
+
+export default function AboutPage() {
+  return <About />;
+}
