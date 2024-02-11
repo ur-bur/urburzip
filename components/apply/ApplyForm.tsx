@@ -77,7 +77,9 @@ export default function ApplyForm() {
     }
   }
   return (
-    <div className="w-96 h-full">
+    <div>
+      <h1 className="text-2xl text-center font-semibold">🌼2024-1 어리버리 지원🌼</h1>
+    <div className="h-full w-full md:w-[26rem] shadow-xl p-8">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
@@ -102,8 +104,8 @@ export default function ApplyForm() {
                 <FormControl>
                   <Input placeholder="학번을 입력해주세요" {...field} />
                 </FormControl>
-                <FormDescription>
-                  학번이 나오지 않았다면 24와 같이 입력해주세요.
+                <FormDescription className="text-xs">
+                  학번이 나오지 않았다면 2024000000와 같이 입력해주세요.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -131,18 +133,20 @@ export default function ApplyForm() {
                 <FormControl>
                   <Input placeholder="매!력!발!산!" {...field} />
                 </FormControl>
-                <FormDescription>
-                  간략한 자기소개나 각오, MBTI와 같이 편하게 작성해주세요!
+                <FormDescription className="text-xs">
+                  간략한 자기소개나 각오, MBTI 같은 내용을 편하게 작성해주세요!
                 </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
           />
           <Button className="w-full" type="submit">
-            Submit
+            신청하기
           </Button>
         </form>
       </Form>
     </div>
+    </div>
+
   );
 }
