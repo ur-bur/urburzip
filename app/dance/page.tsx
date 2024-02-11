@@ -1,5 +1,7 @@
+import DanceVideos from "@/components/dance/DanceVideos";
+
 export default function DancePage() {
   return (
-    <div>Dance</div>
+    <DanceVideos />
   )
 }
