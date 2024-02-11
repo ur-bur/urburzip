@@ -122,6 +122,36 @@ export type Database = {
         }
         Relationships: []
       }
+      musics: {
+        Row: {
+          author: string | null
+          created_at: string
+          id: string
+          index: number
+          lyric: string | null
+          title: string
+          url: string
+        }
+        Insert: {
+          author?: string | null
+          created_at?: string
+          id?: string
+          index?: number
+          lyric?: string | null
+          title: string
+          url: string
+        }
+        Update: {
+          author?: string | null
+          created_at?: string
+          id?: string
+          index?: number
+          lyric?: string | null
+          title?: string
+          url?: string
+        }
+        Relationships: []
+      }
       users: {
         Row: {
           avatar_url: string
