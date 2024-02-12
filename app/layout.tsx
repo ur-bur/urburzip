@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import { Toaster } from "sonner";
 import { ModeToggle } from "@/components/toggleThemeButton";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const notoSansKr = Noto_Sans_KR({
   weight: ["500"],
@@ -72,6 +73,7 @@ export default function RootLayout({
           <ModeToggle />
           <Toaster position="top-center" />
           <Analytics />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
