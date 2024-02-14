@@ -1,8 +1,8 @@
 import InitUser from "@/lib/store/InitUser";
 import { supabaseServer } from "@/lib/supabase/server";
-import AboutPage from "../(nav)/about/page";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 export default async function Home() {
   const supabase = supabaseServer();
@@ -12,7 +12,7 @@ export default async function Home() {
       <main>
         <div className="relative">
           <div>
-            <img src="/main.png" alt="main_image" className="w-full" />
+            <Image src="/main.png" alt="main_image" width={1440} height={523} className="w-full" quality={100}/>
           </div>
 
           <div className="absolute text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
