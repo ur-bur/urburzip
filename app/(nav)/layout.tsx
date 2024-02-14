@@ -3,7 +3,7 @@ export default function NavLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <div className="px-4 md:px-24">
+  return <div className="flex-1 px-4 md:px-24 flex items-center">
     {children}
   </div>;
 }
