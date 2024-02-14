@@ -19,7 +19,13 @@ export default function MusicControl() {
   };
 
   const handleRewind = () => {
-    console.log(audio?.currentTime);
+    if(!audio) return;
+    audio.currentTime -= 5;
+  }
+
+  const handleForward = () => {
+    if(!audio) return;
+    audio.currentTime += 5;
   }
 
   return (
@@ -27,12 +33,12 @@ export default function MusicControl() {
       <div className="text-gray-800 hover:cursor-pointer" onClick={alertNotSupport}>
         <Repeat className="" strokeWidth={2.5}/>
       </div>
-      <div className="text-gray-800 hover:cursor-pointer" onClick={alertNotSupport}>
+      <div className="text-gray-800 hover:cursor-pointer" onClick={handleRewind}>
         <Rewind fill="currentColor"/>
       </div>
       <div
         onClick={handlePlay}
-        className="text-black p-8 rounded-full bg-yellow-light shadow-lg"
+        className="text-black hover:cursor-pointer p-8 rounded-full bg-yellow-light shadow-lg"
       >
         {isPlaying ? (
           <Pause fill="currentColor" />
@@ -40,10 +46,10 @@ export default function MusicControl() {
           <Play fill="currentColor" />
         )}
       </div>
-      <div className="text-gray-800" onClick={alertNotSupport}>
+      <div className="text-gray-800 hover:cursor-pointer" onClick={handleForward}>
         <FastForward fill="currentColor"/>
       </div>
-      <div className="text-gray-800" onClick={alertNotSupport}>
+      <div className="text-gray-800 hover:cursor-pointer" onClick={alertNotSupport}>
         <Volume2 strokeWidth={2.5}/>
       </div>
     </div>
