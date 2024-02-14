@@ -20,6 +20,7 @@ import { toast } from "sonner";
 import { v4 as uuidv4 } from "uuid";
 import { redirect, useRouter } from "next/navigation";
 import { revalidatePath } from "next/cache";
+import { Textarea } from "../ui/textarea";
 
 export const metadata = {
   title: "Apply",
@@ -122,6 +123,9 @@ export default function ApplyForm() {
                   <FormControl>
                     <Input placeholder="전화번호를 입력해주세요" {...field} />
                   </FormControl>
+                  <FormDescription className="text-xs">
+                    01012345678과 같이 작성해주세요.
+                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -133,7 +137,7 @@ export default function ApplyForm() {
                 <FormItem>
                   <FormLabel>자기소개</FormLabel>
                   <FormControl>
-                    <Input placeholder="매!력!발!산!" {...field} />
+                    <Textarea placeholder="매!력!발!산!" {...field}/>
                   </FormControl>
                   <FormDescription className="text-xs">
                     간략한 자기소개나 각오, MBTI 같은 내용을 편하게
