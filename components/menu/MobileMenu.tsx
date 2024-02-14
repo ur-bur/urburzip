@@ -57,8 +57,8 @@ export function MobileMenu({ user }: { user: User | undefined }) {
         <DropdownMenuLabel>Menu</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
-          <Link href="/about">
-            <DropdownMenuRadioItem value="0">ABOUT</DropdownMenuRadioItem>
+          <Link href="/">
+            <DropdownMenuRadioItem value="0">HOME</DropdownMenuRadioItem>
           </Link>
           <Link href="/apply">
             <DropdownMenuRadioItem value="1">APPLY</DropdownMenuRadioItem>

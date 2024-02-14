@@ -59,7 +59,7 @@ export default function RootLayout({
       <body
         className={[
           notoSansKr.className,
-          "flex flex-col min-h-screen p-4 md:px-24 md:py-10",
+          "flex flex-col min-h-screen",
         ].join(" ")}
       >
         <ThemeProvider
