@@ -1,3 +1,4 @@
+import Lyrics from "@/components/music/Lyrics";
 import MusicList from "@/components/music/MusicList";
 import MusicPlayer from "@/components/music/MusicPlayer";
 import InitAudio from "@/lib/store/InitAudio";
@@ -18,9 +19,12 @@ export default async function MusicPage() {
 
   return (
     <>
-      <div className="flex flex-col items-center">
-        <MusicList />
-        <MusicPlayer />
+      <div className="w-full flex xl:flex-row gap-4 flex-col justify-center items-center">
+        <div className="w-full lg:w-[45rem] flex flex-col items-center">
+          <MusicList />
+          <MusicPlayer />
+        </div>
+          <Lyrics />
       </div>
       <InitMusic musics={data as IMusic[]} />
     </>

@@ -14,6 +14,8 @@ interface MusicState {
   isPlaying: boolean;
   toggleIsPlaying: () => void;
   setIsPlaying: (b: boolean) => void;
+  isOpen: boolean;
+  toggleIsOpen: () => void;
 }
 
 export const useAudio = create<MusicState>()((set) => ({
@@ -21,7 +23,7 @@ export const useAudio = create<MusicState>()((set) => ({
   setAudio: (a: HTMLAudioElement) => set({ audio: a }),
   duration: 0,
   realtime: 0,
-  progress: 0.000,
+  progress: 0.0,
   volume: 1,
   setDuration: (d: number) => set({ duration: d }),
   setRealtime: (r: number) => set({ realtime: r }),
@@ -30,4 +32,6 @@ export const useAudio = create<MusicState>()((set) => ({
   isPlaying: false,
   toggleIsPlaying: () => set((state) => ({ isPlaying: !state.isPlaying })),
   setIsPlaying: (b: boolean) => set({ isPlaying: b }),
+  isOpen: true,
+  toggleIsOpen: () => set((state) => ({ isOpen: !state.isOpen })),
 }));

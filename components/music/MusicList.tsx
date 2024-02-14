@@ -10,7 +10,7 @@ export default function MusicList() {
   const { audio, setIsPlaying } = useAudio();
 
   return (
-    <div className="flex gap-2 mb-4 w-full md:w-[45rem] flex-wrap">
+    <div className="flex gap-2 mb-4 flex-wrap">
       {musics?.map((v, i) => (
         <div
           key={i}

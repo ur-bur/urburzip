@@ -9,8 +9,8 @@ import InitAudio from "@/lib/store/InitAudio";
 export default function MusicPlayer() {
   return (
     <>
-      <div className="w-full md:w-[45rem] flex flex-col items-center">
-        <div className="w-full h-[0.3rem] bg-yellow-900 rounded-t-xl"></div>
+      <div className="w-full flex flex-col items-center">
+        <div className="h-[0.3rem] bg-yellow-900 rounded-t-xl"></div>
         <div className="flex items-center justify-center h-full rounded-xl bg-yellow-100 rounded-b-xl w-full">
           <div className="bg-white shadow-lg rounded-lg w-[45rem]">
             <div className="flex flex-col md:flex-row">
