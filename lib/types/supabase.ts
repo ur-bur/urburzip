@@ -9,41 +9,6 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      admins: {
-        Row: {
-          created_at: string
-          id: string
-          name: string
-          role: number
-          semester: number
-          year: number
-        }
-        Insert: {
-          created_at?: string
-          id: string
-          name: string
-          role: number
-          semester: number
-          year: number
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          name?: string
-          role?: number
-          semester?: number
-          year?: number
-        }
-        Relationships: [
-          {
-            foreignKeyName: "admins_id_fkey"
-            columns: ["id"]
-            isOneToOne: true
-            referencedRelation: "users"
-            referencedColumns: ["id"]
-          }
-        ]
-      }
       apply: {
         Row: {
           allow: boolean
@@ -83,8 +48,56 @@ export type Database = {
         }
         Relationships: []
       }
+      managers: {
+        Row: {
+          created_at: string
+          id: string
+          instagram: string | null
+          message: string | null
+          name: string
+          phone: string | null
+          role: number
+          semester: number
+          url: string | null
+          year: number
+        }
+        Insert: {
+          created_at?: string
+          id: string
+          instagram?: string | null
+          message?: string | null
+          name: string
+          phone?: string | null
+          role: number
+          semester: number
+          url?: string | null
+          year: number
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          instagram?: string | null
+          message?: string | null
+          name?: string
+          phone?: string | null
+          role?: number
+          semester?: number
+          url?: string | null
+          year?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "managers_id_fkey"
+            columns: ["id"]
+            isOneToOne: true
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
       members: {
         Row: {
+          bee: number
           created_at: string
           email: string
           id: string
@@ -97,6 +110,7 @@ export type Database = {
           year: number
         }
         Insert: {
+          bee?: number
           created_at?: string
           email: string
           id?: string
@@ -109,6 +123,7 @@ export type Database = {
           year: number
         }
         Update: {
+          bee?: number
           created_at?: string
           email?: string
           id?: string
@@ -155,6 +170,7 @@ export type Database = {
       users: {
         Row: {
           avatar_url: string
+          bee: number | null
           created_at: string
           display_name: string
           email: string | null
@@ -164,6 +180,7 @@ export type Database = {
         }
         Insert: {
           avatar_url: string
+          bee?: number | null
           created_at?: string
           display_name: string
           email?: string | null
@@ -173,6 +190,7 @@ export type Database = {
         }
         Update: {
           avatar_url?: string
+          bee?: number | null
           created_at?: string
           display_name?: string
           email?: string | null
@@ -189,6 +207,30 @@ export type Database = {
             referencedColumns: ["id"]
           }
         ]
+      }
+      videos: {
+        Row: {
+          created_at: string
+          id: string
+          index: number
+          key: string
+          title: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          index: number
+          key: string
+          title: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          index?: number
+          key?: string
+          title?: string
+        }
+        Relationships: []
       }
     }
     Views: {
