@@ -31,7 +31,7 @@ const formSchema = z.object({
   sid: z.string().length(10, {
     message: "학번은 10자리수 입니다.",
   }),
-  phone: z.string(),
+  phone: z.string().regex(new RegExp(/\b010\d{8}\b/), "형식이 올바르지 않습니다."),
   introduce: z.string(),
 });
 
