@@ -1,5 +1,5 @@
 export default function M_UserPage() {
   return (
-    <div>User</div>
+    <div>열심히 개발중...</div>
   )
 }

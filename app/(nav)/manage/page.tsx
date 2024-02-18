@@ -1,6 +1,3 @@
-export default function ManagePage() {
-  return (
-    <div>
-    </div>
-  )
+export default async function ManagePage() {
+  return <p>Welcome!</p>;
 }
