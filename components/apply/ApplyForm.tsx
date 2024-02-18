@@ -18,9 +18,9 @@ import { Input } from "@/components/ui/input";
 import { supabaseClient } from "@/lib/supabase/client";
 import { toast } from "sonner";
 import { v4 as uuidv4 } from "uuid";
-import { redirect, useRouter } from "next/navigation";
-import { revalidatePath } from "next/cache";
+import { useRouter } from "next/navigation";
 import { Textarea } from "../ui/textarea";
+import { useState } from "react";
 
 export const metadata = {
   title: "Apply",
@@ -28,7 +28,7 @@ export const metadata = {
 
 const formSchema = z.object({
   username: z.string(),
-  sid: z.string().min(10, {
+  sid: z.string().length(10, {
     message: "학번은 10자리수 입니다.",
   }),
   phone: z.string(),
@@ -49,6 +49,7 @@ export type ApplyData = {
 };
 
 export default function ApplyForm() {
+  const [applied, setApplied] = useState(false);
   const router = useRouter();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -56,6 +57,8 @@ export default function ApplyForm() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    if (applied) return;
+    setApplied(true);
     const supabase = supabaseClient();
     const { error } = await supabase.from("apply").insert({
       id: uuidv4(),
@@ -72,6 +75,7 @@ export default function ApplyForm() {
 
     if (error) {
       toast.error(error.message);
+      setApplied(false);
     } else {
       toast.success("지원에 성공했습니다. 어-리버리화이팅!");
       router.push("/");
@@ -137,7 +141,7 @@ export default function ApplyForm() {
                 <FormItem>
                   <FormLabel>자기소개</FormLabel>
                   <FormControl>
-                    <Textarea placeholder="매!력!발!산!" {...field}/>
+                    <Textarea placeholder="매!력!발!산!" {...field} />
                   </FormControl>
                   <FormDescription className="text-xs">
                     간략한 자기소개나 각오, MBTI 같은 내용을 편하게
