@@ -12,7 +12,7 @@ export default function M_ApplyPage() {
 
   useEffect(() => {
     const getApplyData = async () => {
-      const { data } = await supabase.from("apply").select("*");
+      const { data } = await supabase.from("apply").select("*").order("created_at");
       setApplies(data as ApplyData[]);
     };
     getApplyData();
