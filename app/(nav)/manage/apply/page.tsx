@@ -3,7 +3,6 @@
 import { ApplyData } from "@/components/apply/ApplyForm";
 import { supabaseClient } from "@/lib/supabase/client";
 import { getDateWithTime } from "@/lib/utils";
-import { GripVertical } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function M_ApplyPage() {
@@ -12,7 +11,7 @@ export default function M_ApplyPage() {
 
   useEffect(() => {
     const getApplyData = async () => {
-      const { data } = await supabase.from("apply").select("*").order("created_at");
+      const { data } = await supabase.from("apply").select("*").order("created_at", {ascending : false});
       setApplies(data as ApplyData[]);
     };
     getApplyData();
