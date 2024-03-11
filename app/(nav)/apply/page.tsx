@@ -10,7 +10,7 @@ export default async function ApplyPage() {
     // <div className="flex-1 flex items-center justify-center">
     //   <ApplyForm />
     // </div>
-    <div>
+    <div className="flex-1 flex justify-center">
       현재 어리버리 모집 기간이 아닙니다. 다음 모집을 기대해주세요!
     </div>
   );
