@@ -52,13 +52,14 @@ export default async function Home() {
         <div className="py-4 px-4 md:px-24">
           <p className="text-lg font-bold">공지사항</p>
           <div className="p-2 bg-slate-100 rounded-md text-center">
-            <p>어리버리 24-1 모집중입니다! 많이 지원해주세요</p>
+            <p>어리버리 24-2 모집중입니다! 많이 지원해주세요</p>
             <br />
             <p>📣모집 공지📣</p>
 
-            <p>📌회합일 : 매주 화요일 18:00 (이후 뒤풀이 진행)</p>
-            <p>📌모집 기간 : 2/10 ~ 3/11</p>
-            <p>📌모집 인원 : 30명 내외</p>
+            <p>❗회합 일시: 매주 화요일 18:00</p>
+            <p>❗2학기 첫 회합: 9/3</p>
+            <p>❗모집 기간: 8/1 ~ 8/20</p>
+            <p>❗️모집 대상: 컴퓨터소프트웨어학부 재, 휴학생</p>
 
             <p>
               📌지원 링크 :{" "}
