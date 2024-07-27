@@ -70,7 +70,7 @@ export default function ApplyForm() {
       sid: Number(values.sid),
       name: values.username,
       year: 2024,
-      semester: 1,
+      semester: 2,
     });
 
     if (error) {
@@ -84,7 +84,7 @@ export default function ApplyForm() {
   return (
     <div className="flex flex-col items-center">
       <h1 className="text-2xl text-center font-semibold">
-        🌼2024-1 어리버리 지원🌼
+        🌼2024-2 어리버리 지원🌼
       </h1>
       <div className="h-full w-full md:w-[26rem] shadow-xl p-8">
         <Form {...form}>
