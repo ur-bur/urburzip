@@ -35,7 +35,7 @@ export default async function Home() {
             </div>
           </div>
         </div>
-        <div className="py-4 px-4 md:px-24">
+        {/* <div className="py-4 px-4 md:px-24">
           <p className="text-lg font-bold">홍보글</p>
 
           <div className="p-2 bg-slate-100 rounded-md flex flex-col md:flex-row justify-between items-center">
@@ -73,7 +73,7 @@ export default async function Home() {
             <p>회장 장채연 (010-4047-6601)</p>
             <p>부회장 김우리 (010-2918-9297)</p>
           </div>
-        </div>
+        </div> */}
 
         <div className="md:hidden px-4">
           <Link href="/apply">

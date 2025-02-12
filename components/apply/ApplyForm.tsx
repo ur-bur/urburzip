@@ -84,7 +84,7 @@ export default function ApplyForm() {
   return (
     <div className="flex flex-col items-center">
       <h1 className="text-2xl text-center font-semibold">
-        🌼2024-2 어리버리 지원🌼
+        🌼2025-1 어리버리 지원🌼
       </h1>
       <div className="h-full w-full md:w-[26rem] shadow-xl p-8">
         <Form {...form}>
@@ -112,7 +112,7 @@ export default function ApplyForm() {
                     <Input placeholder="학번을 입력해주세요" {...field} />
                   </FormControl>
                   <FormDescription className="text-xs">
-                    학번이 나오지 않았다면 2024000000와 같이 입력해주세요.
+                    학번이 나오지 않았다면 2025000000와 같이 입력해주세요.
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
